@@ -174,3 +174,71 @@ That's where .shift() comes in. It works just like .pop(), except it removes the
 const myArray = [["John", 23], ["dog", 3]];
 // Only change code below this line
 const removedFromMyArray = myArray.shift()
+
+/*Manipulate Arrays With unshift()
+Not only can you shift elements off of the beginning of an array, you can also unshift elements to the beginning of an array i.e. add elements in front of the array.
+.unshift() works exactly like .push(), but instead of adding the element at the end of the array, unshift() adds the element at the beginning of the array.
+Example:*/
+const myArray = [["John", 23], ["dog", 3]];
+myArray.shift();
+myArray.unshift(["Paul", 35])
+
+/*Shopping List
+Create a shopping list in the variable myList. The list should be a multi-dimensional array containing several sub-arrays.
+The first element in each sub-array should contain a string with the name of the item. The second element should be a number representing the quantity i.e.*/
+const myList = [
+  ["ur mom", 20],
+  ["my mom", 10000000],
+  ["ur dad", 1],
+  ["coco", 45],
+  ["cici", 455],
+];
+
+/* Write Reusable JavaScript with Functions
+In JavaScript, we can divide up our code into reusable parts called functions.
+Here's an example of a function: */
+function reusableFunction() {
+  console.log("Hi World");
+}
+reusableFunction()
+
+/* Passing Values to Functions with Arguments
+Parameters are variables that act as placeholders for the values that are to be input to a function when it is called. When a function is defined, it is typically defined along with one or more parameters. The actual values that are input (or "passed") into a function when it is called are known as arguments.
+Here is a function with two parameters, param1 and param2: */
+function functionWithArgs(firstPar, secondPar) {
+  console.log(firstPar + secondPar)
+}
+functionWithArgs(1, 2),
+functionWithArgs(7, 9)
+
+/* Return a Value from a Function with Return
+We can pass values into a function with arguments. You can use a return statement to send a value back out of a function.
+Example */
+function timesFive(num) {
+  return num * 5;
+}
+timesFive(5),
+timesFive(2),
+timesFive(0)
+
+/* Global Scope and Functions
+In JavaScript, scope refers to the visibility of variables. Variables which are defined outside of a function block have Global scope. This means, they can be seen everywhere in your JavaScript code.
+Variables which are declared without the let or const keywords are automatically created in the global scope. This can create unintended consequences elsewhere in your code or when running a function again. You should always declare your variables with let or const. */
+// Declare the myGlobal variable below this line
+let myGlobal = 10
+
+function fun1() {
+  // Assign 5 to oopsGlobal Here
+oopsGlobal = 5
+}
+// Only change code above this line
+function fun2() {
+  var output = "";
+  if (typeof myGlobal != "undefined") {
+    output += "myGlobal: " + myGlobal;
+  }
+  if (typeof oopsGlobal != "undefined") {
+    output += " oopsGlobal: " + oopsGlobal;
+  }
+  console.log(output);
+}
