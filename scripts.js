@@ -242,3 +242,71 @@ function fun2() {
   }
   console.log(output);
 }
+/* Local Scope and Functions
+Variables which are declared within a function, as well as the function parameters, have local scope. That means they are only visible within that function. */
+function myLocalScope() {
+  // Only change code below this line
+  let myVar = "pizza"
+  console.log('inside myLocalScope', myVar);
+}
+myLocalScope();
+// Run and check the console
+// myVar is not defined outside of myLocalScope
+console.log('outside myLocalScope', myVar);
+
+/* Global vs. Local Scope in Functions
+It is possible to have both local and global variables with the same name. When you do this, the local variable takes precedence over the global variable.
+In this example: */
+// Setup
+const outerWear = "T-Shirt";
+function myOutfit() {
+  // Only change code below this line
+  const outerWear = "sweater";
+  // Only change code above this line
+  return outerWear;
+}
+myOutfit();
+
+/* Understanding Undefined Value returned from a Function
+A function can include the return statement but it does not have to. In the case that the function doesn't have a return statement, when you call it, the function processes the inner code but the returned value is undefined.
+Example */
+// Setup
+let sum = 0;
+function addThree() {
+  sum = sum + 3;
+}
+// Only change code below this line
+function addFive() {
+  sum = sum + 5;
+}
+// Only change code above this line
+addThree();
+addFive();
+
+/* Assignment with a Returned Value
+If you'll recall from our discussion of Storing Values with the Assignment Operator, everything to the right of the equal sign is resolved before the value is assigned. This means we can take the return value of a function and assign it to a variable. */
+// Setup
+let processed = 0;
+function processArg(num) {
+  return (num + 3) / 5;
+}
+// Only change code below this line
+processed = processArg(7) ;
+
+/* "Stand in Line"
+In Computer Science a queue is an abstract Data Structure where items are kept in order. New items can be added at the back of the queue and old items are taken off from the front of the queue.
+Write a function nextInLine which takes an array (arr) and a number (item) as arguments.
+Add the number to the end of the array, then remove the first element of the array.
+The nextInLine function should then return the element that was removed. */
+function nextInLine(arr, item) {
+  // Only change code below this line
+  arr.push(item)
+  return arr.shift(testArr);
+  // Only change code above this line
+}
+// Setup
+const testArr = [1, 2, 3, 4, 5];
+// Display code
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInLine(testArr, 6));
+console.log("After: " + JSON.stringify(testArr));
