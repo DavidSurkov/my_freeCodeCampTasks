@@ -341,3 +341,343 @@ function testEqual(val) {
   return "Not Equal";
 }
 testEqual(10);
+
+/* Comparison with the Strict Equality Operator
+Strict equality (===) is the counterpart to the equality operator (==). However, unlike the equality operator, which attempts to convert both values being compared to a common type, the strict equality operator does not perform a type conversion.
+If the values being compared have different types, they are considered unequal, and the strict equality operator will return false. */
+// Setup
+function testStrict(val) {
+  if (val === 7) { // Change this line
+    return "Equal";
+  }
+  return "Not Equal";
+}
+testStrict(10);
+
+/* Practice comparing different values
+In the last two challenges, we learned about the equality operator (==) and the strict equality operator (===). Let's do a quick review and practice using these operators some more.
+If the values being compared are not of the same type, the equality operator will perform a type conversion, and then evaluate the values. However, the strict equality operator will compare both the data type and value as-is, without converting one type to the other.
+Examples
+3 == '3' returns true because JavaScript performs type conversion from string to number. 3 === '3' returns false because the types are different and type conversion is not performed. */
+function compareEquality(a, b) {
+  if (a === b) { // Change this line
+    return "Equal";
+  }
+  return "Not Equal";
+}
+compareEquality(10, "10");
+
+/* Comparison with the Inequality Operator
+The inequality operator (!=) is the opposite of the equality operator. It means not equal and returns false where equality would return true and vice versa. Like the equality operator, the inequality operator will convert data types of values while comparing. */
+function testNotEqual(val) {
+  if (val != 99) { // Change this line
+    return "Not Equal";
+  }
+  return "Equal";
+}
+testNotEqual(10);
+
+/* Comparison with the Strict Inequality Operator
+The strict inequality operator (!==) is the logical opposite of the strict equality operator. It means "Strictly Not Equal" and returns false where strict equality would return true and vice versa. The strict inequality operator will not convert data types. */
+function testStrictNotEqual(val) {
+  if (val !== 17) { // Change this line
+    return "Not Equal";
+  }
+  return "Equal";
+}
+testStrictNotEqual(10);
+
+/* Comparison with the Greater Than Operator
+The greater than operator (>) compares the values of two numbers. If the number to the left is greater than the number to the right, it returns true. Otherwise, it returns false.
+Like the equality operator, the greater than operator will convert data types of values while comparing. */
+function testGreaterThan(val) {
+  if (val > 100) {  // Change this line
+    return "Over 100";
+  }
+  if (val > 10) {  // Change this line
+    return "Over 10";
+  }
+  return "10 or Under";
+}
+testGreaterThan(10);
+
+/* Comparison with the Greater Than Or Equal To Operator
+The greater than or equal to operator (>=) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns true. Otherwise, it returns false.
+Like the equality operator, the greater than or equal to operator will convert data types while comparing. */
+function testGreaterOrEqual(val) {
+  if (val >= 20) {  // Change this line
+    return "20 or Over";
+  }
+  if (val >= 10) {  // Change this line
+    return "10 or Over";
+  }
+  return "Less than 10";
+}
+testGreaterOrEqual(10);
+
+/* Comparison with the Less Than Operator
+The less than operator (<) compares the values of two numbers. If the number to the left is less than the number to the right, it returns true. Otherwise, it returns false. Like the equality operator, the less than operator converts data types while comparing. */
+function testLessThan(val) {
+  if (val < 25) {  // Change this line
+    return "Under 25";
+  }
+  if (val < 55) {  // Change this line
+    return "Under 55";
+  }
+  return "55 or Over";
+}
+testLessThan(10);
+
+/* Comparison with the Less Than Or Equal To Operator
+The less than or equal to operator (<=) compares the values of two numbers. If the number to the left is less than or equal to the number to the right, it returns true. If the number on the left is greater than the number on the right, it returns false. Like the equality operator, the less than or equal to operator converts data types. */
+function testLessOrEqual(val) {
+  if (val <= 12) {  // Change this line
+    return "Smaller Than or Equal to 12";
+  }
+  if (val <= 24) {  // Change this line
+    return "Smaller Than or Equal to 24";
+  }
+  return "More Than 24";
+}
+testLessOrEqual(10);
+
+/* Comparisons with the Logical And Operator
+Sometimes you will need to test more than one thing at a time. The logical and operator (&&) returns true if and only if the operands to the left and right of it are true.
+The same effect could be achieved by nesting an if statement inside another if: */
+function testLogicalAnd(num) {
+  if (num > 5) {
+    if (num < 10) {
+      return "Yes";
+    }
+  }
+  return "No";
+}
+// Same as
+function testLogicalAnd(num) {
+  if (num > 5 && num < 10) {
+    return "Yes";
+  }
+  return "No";
+}
+
+/* Comparisons with the Logical Or Operator
+The logical or operator (||) returns true if either of the operands is true. Otherwise, it returns false.
+
+The logical or operator is composed of two pipe symbols: (||). This can typically be found between your Backspace and Enter keys.
+Combine the two if statements into one statement which returns the string Outside if val is not between 10 and 20, inclusive. Otherwise, return the string Inside. */
+function testLogicalOr(val) {
+  if (val > 20 || val < 10) {
+    return "Outside";
+  }
+  return "Inside";
+}
+testLogicalOr(15);
+
+/* Introducing Else Statements
+When a condition for an if statement is true, the block of code following it is executed. What about when that condition is false? Normally nothing would happen. With an else statement, an alternate block of code can be executed. */
+function testElse(val) {
+  let result = "";
+  if (val > 5) {
+    result = "Bigger than 5";
+  } 
+  else {
+    result = "5 or Smaller";
+  }
+  return result;
+}
+testElse(4);
+
+/* Introducing Else If Statements
+If you have multiple conditions that need to be addressed, you can chain if statements together with else if statements. */
+function testElseIf(val) {
+  if (val > 10) {
+    return "Greater than 10";
+  }
+  else if (val < 5) {
+    return "Smaller than 5";
+  }
+  else {
+  return "Between 5 and 10";
+  }
+}
+testElseIf(7);
+
+/* Logical Order in If Else Statements
+Order is important in if, else if statements.
+
+The function is executed from top to bottom so you will want to be careful of what statement comes first.
+
+Take these two functions as an example.
+
+Here's the first: */
+
+function foo(x) {
+  if (x < 1) {
+    return "Less than one";
+  } else if (x < 2) {
+    return "Less than two";
+  } else {
+    return "Greater than or equal to two";
+  }
+}
+// And the second just switches the order of the statements:
+
+function bar(x) {
+  if (x < 2) {
+    return "Less than two";
+  } else if (x < 1) {
+    return "Less than one";
+  } else {
+    return "Greater than or equal to two";
+  }
+}
+// While these two functions look nearly identical if we pass a number to both we get different outputs.
+
+foo(0)
+bar(0)
+// foo(0) will return the string Less than one, and bar(0) will return the string Less than two.
+
+/* Chaining If Else Statements
+if/else statements can be chained together for complex logic. Here is pseudocode of multiple chained if / else if statements: */
+function testSize(num) {
+if (num < 5) {
+  return "Tiny"
+}
+else if (num < 10) {
+  return "Small"
+}
+else if (num < 15) {
+  return "Medium"
+}
+else if (num < 20) {
+  return "Large"
+}
+  else {
+  return "Huge"
+}
+}
+
+testSize(7);
+
+/* Golf Code
+In the game of golf, each hole has a par, meaning, the average number of strokes a golfer is expected to make in order to sink the ball in the hole to complete the play. Depending on how far above or below par your strokes are, there is a different nickname.
+
+Your function will be passed par and strokes arguments. Return the correct string according to this table which lists the strokes in order of priority; top (highest) to bottom (lowest):
+
+Strokes	Return
+1	"Hole-in-one!"
+<= par - 2	"Eagle"
+par - 1	"Birdie"
+par	"Par"
+par + 1	"Bogey"
+par + 2	"Double Bogey"
+>= par + 3	"Go Home!"
+par and strokes will always be numeric and positive. We have added an array of all the names for your convenience. */
+const names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+
+function golfScore(par, strokes) {
+  if (strokes == 1) {
+    return names[0]
+  }
+  else if (strokes <= par - 2) {
+    return names[1]
+  }
+  else if (strokes == par - 1) {
+    return names[2]
+  }
+  else if (strokes == par) {
+    return names[3]
+  }
+  else if (strokes == par + 1) {
+    return names[4]
+  }
+  else if (strokes == par + 2) {
+    return names[5]
+  }
+  else {
+    return names[6]
+  }
+
+}
+
+golfScore(5, 4);
+
+/* Selecting from Many Options with Switch Statements
+If you have many options to choose from, use a switch statement. A switch statement tests a value and can have many case statements which define various possible values. Statements are executed from the first matched case value until a break is encountered.
+
+Here is an example of a switch statement: */
+function caseInSwitch(val) {
+  let answer = "";
+switch(val) {
+  case 1:
+    answer = "alpha";
+    break;
+  case 2:
+    answer = "beta";
+    break;
+  case 3:
+    answer = "gamma";
+    break;
+  case 4:
+    answer = "delta";
+    break;
+}
+  return answer;
+}
+
+caseInSwitch(1);
+
+/* Adding a Default Option in Switch Statements
+In a switch statement you may not be able to specify all possible values as case statements. Instead, you can add the default statement which will be executed if no matching case statements are found. Think of it like the final else statement in an if/else chain.
+
+A default statement should be the last case. */
+function switchOfStuff(val) {
+  let answer = "";
+switch (val) {
+  case "a":
+    answer = "apple";
+    break;
+  case "b":
+    answer = "bird";
+    break;
+  case "c":
+    answer = "cat";
+    break;
+  default:
+    answer = "stuff";
+    break;
+}
+  return answer;
+}
+
+switchOfStuff("a");
+
+/* Multiple Identical Options in Switch Statements
+If the break statement is omitted from a switch statement's case, the following case statement(s) are executed until a break is encountered. If you have multiple inputs with the same output, you can represent them in a switch statement like this:
+Write a switch statement to set answer for the following ranges:
+1-3 - Low
+4-6 - Mid
+7-9 - High */
+function sequentialSizes(val) {
+  let answer = "";
+switch(val) {
+  case 1:
+  case 2:
+  case 3:
+    answer = "Low";
+    break;
+  case 4:
+  case 5:
+  case 6:
+    answer = "Mid";
+    break;
+  case 7:
+  case 8:
+  case 9:
+    answer = "High";
+    break;
+}
+  return answer;
+}
+
+sequentialSizes(1);
