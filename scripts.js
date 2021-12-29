@@ -1028,3 +1028,179 @@ function updateRecords(records, id, prop, value) {
 }
 
 updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
+// Iterate while Loop
+const myArray = [];
+let a = 5;
+while (a >= 0) {
+  myArray.push(a);
+  a--;
+}
+console.log(myArray);
+
+//Iterate with JavaScript For Loops
+const myArray = [];
+for(let i = 1; i <= 5; i++) {
+  myArray.push(i);
+}
+
+//Iterate Odd Numbers With a For Loop
+const myArray = [];
+for(let i = 1; i < 10; i += 2) {
+  myArray.push(i);
+}
+
+//Count Backwards With a For Loop
+const myArray = [];
+for (let i = 9; i > 0; i -= 2) {
+  myArray.push(i);
+}
+
+//Iterate Through an Array with a For Loop
+const myArr = [2, 3, 4, 5, 6];
+let total = 0;
+for (let i = 0; i < myArr.length; i++) {
+  total += myArr[i];
+}
+
+//Nesting For Loops
+function multiplyAll(arr) {
+  let product = 1;
+for (let i = 0; i < arr.length; i++) {
+  for (let j = 0; j < arr[i].length; j++) {
+    product *= arr[i][j];
+  }
+}
+  return product;
+}
+
+multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
+
+//Iterate with JavaScript Do...While Loops
+const myArray = [];
+let i = 10;
+
+do {
+  myArray.push(i);
+  i++;
+} while (i < 5)
+
+//Replace Loops using Recursion
+function sum(arr, n) {
+  if (n <= 0) {
+      return 0;
+    } else {
+      return sum(arr, n - 1) + arr[n - 1];
+    }
+  }
+
+
+// Profile Lookup
+const contacts = [
+  {
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+
+function lookUpProfile(name, prop) {
+for (var i = 0; i < contacts.length; i++) {
+    if(contacts[i].firstName === name) {
+      return contacts[i][prop] || "No such property";
+    }
+  }
+  return "No such contact";
+}
+
+// Generate Random Fractions with JavaScript
+function randomFraction() {
+
+  return Math.random();
+
+}
+
+//Generate Random Whole Numbers with JavaScript
+function randomWholeNum() {
+
+  return Math.floor(Math.random() * 10);
+}
+
+//Generate Random Whole Numbers within a Range
+function randomRange(myMin, myMax) {
+  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+}
+
+//Use the parseInt Function
+//The parseInt() function parses a string and returns an integer.
+function convertToInteger(str) {
+  return parseInt(str);
+ }
+ 
+ convertToInteger("56");
+
+// Use the parseInt Function with a Radix
+function convertToInteger(str) {
+  return parseInt(str, 2)
+  }
+  
+  convertToInteger("10011");
+
+
+//Use the Conditional (Ternary) Operator
+function checkEqual(a, b) {
+  return a == b ? "Equal" : "Not Equal";
+  }
+  
+  checkEqual(1, 2);
+
+//Use Multiple Conditional (Ternary) Operators
+  function checkSign(num) {
+    return (num > 0) ? "positive" 
+     : (num < 0) ? "negative" 
+     : "zero";
+  }
+ 
+  checkSign(10);
+
+
+//Use Recursion to Create a Countdown
+function countdown(n){
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countdown(n - 1);
+    countArray.unshift(n);
+    return countArray;
+  }
+  }
+
+//Use Recursion to Create a Range of Numbers
+function rangeOfNumbers (startNum, endNum) {
+  if (endNum - startNum === 0) {
+    return [startNum];
+  } else {
+    let numbers = rangeOfNumbers(startNum, endNum - 1);
+    numbers.push(endNum);
+    return numbers;
+  }
+}
