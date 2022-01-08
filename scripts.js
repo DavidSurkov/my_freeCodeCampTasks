@@ -1263,3 +1263,18 @@ function countSheeps(arrayOfSheep) {
     return result;
   }, 0);
 }
+
+//Abbreviate a Two Word Name
+function abbrevName(name){
+  return (
+    name
+    .split (" ")
+    .map((part) => part[0].toUpperCase())
+    .join(".")
+  );
+}
+// The best solution
+function abbrevName(name){
+  return name.split(' ').map(i => i[0].toUpperCase()).join('.')
+}}
+
