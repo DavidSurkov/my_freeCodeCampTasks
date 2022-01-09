@@ -1278,3 +1278,63 @@ function abbrevName(name){
   return name.split(' ').map(i => i[0].toUpperCase()).join('.')
 }}
 
+// I love you, a little , a lot, passionately ... not at all
+function howMuchILoveYou(nbPetals) {
+  var petalSaying = ["I love you", "a little", "a lot", "passionately", "madly", "not at all"];
+  var index = (nbPetals - 1) % petalSaying.length;
+  return petalSaying[index];
+}
+
+//else
+howMuchILoveYou = n => ['I love you', 'a little', 'a lot', 'passionately', 'madly', 'not at all'][(n - 1) % 6]
+// the best
+function howMuchILoveYou(nbPetals) {
+  var muchLoves = [
+    'I love you',
+    'a little',
+    'a lot',
+    'passionately',
+    'madly',
+    'not at all'
+  ];
+  return muchLoves[(nbPetals - 1) % muchLoves.length];
+}
+//Filter out the geese
+function gooseFilter (birds) {
+  var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+  return birds.filter(item => !geese.includes(item));
+};
+// the best
+function gooseFilter (birds) {
+  var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+  return gooseFilter.pop(geese);
+  // return an array containing all of the strings in the input array except those that match strings in geese
+};
+//Remove First and Last Character
+function array(arr) {
+  const splitItem = arr.split(",");
+  const sliceItem = splitItem.slice(1, -1);
+  const joinItem = sliceItem.join(" ");
+  if (splitItem.length > 2) {
+  return joinItem
+  } return null
+}
+// the best
+function array(arr){
+  return arr.split(",").slice(1,-1).join(" ") || null;
+}
+
+//Array plus array
+function arrayPlusArray(arr1, arr2) {
+  const reduceArrOne = arr1.reduce(function (prev, item) {
+    return item + prev;
+  }, 0);
+  const reduceArrTwo = arr2.reduce(function (prev, item) {
+    return item + prev;
+  }, 0);
+  return reduceArrOne + reduceArrTwo; //something went wrong
+}
+// sukaaa tak prosto
+function arrayPlusArray(arr1, arr2) {
+  return arr1.concat(arr2).reduce((acc, cur) => acc + cur);
+}
