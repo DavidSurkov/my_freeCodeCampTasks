@@ -1338,3 +1338,67 @@ function arrayPlusArray(arr1, arr2) {
 function arrayPlusArray(arr1, arr2) {
   return arr1.concat(arr2).reduce((acc, cur) => acc + cur);
 }
+//Is there a vowel in there?
+/*Given an array of numbers, check if any of the numbers are the character codes for lower case vowels (a, e, i, o, u).
+
+If they are, change the array value to a string of that vowel.
+
+Return the resulting array.*/
+function isVow(a){
+  var i = 0;
+  return a.forEach(function(v){
+    v == 97 || v == 101 || v == 105 || v==111 || v ==117 ? a[i++] = String .fromCharCode(v) : a[i++] = v;
+  }),a;
+}
+//or 
+function isVow(a){
+  return a.map(i => {
+  if (String.fromCharCode(i) === 'a')
+  return 'a';
+  else if (String.fromCharCode(i) === 'e')
+  return 'e';
+  else if (String.fromCharCode(i) === 'i')
+  return 'i';
+  else if (String.fromCharCode(i) === 'o')
+  return 'o';
+  else if (String.fromCharCode(i) === 'u')
+  return 'u';
+  else 
+  return i;
+  })
+  }
+
+// Convert a string to an array
+function stringToArray(string){
+  let arr = string.split(" ");
+  return arr
+}
+// the best
+const stringToArray = string => string.split(' ');
+
+/*You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+
+Array can contain numbers or strings. X can be either.
+
+Return true if the array contains the value, false if not.*/
+function check(a, x) {
+  let checkItem = a.includes(x)
+  return checkItem
+}
+// the best
+const check = (a,x)=>a.includes(x)
+
+//Convert number to reversed array of digits NE RABOTAET
+function digitize(str) {
+  const stringdArr = String(str);
+  const splitArr = stringdArr.split("");
+  const reverseArr = splitArr.reverse();
+  const toNumber = reverseArr.forEach(function (item) {
+    Number(item);
+  });
+  return toNumber
+}
+// rabotaet 
+function digitize(str) {
+  return String(str).split('').map(element => Number(element)).reverse()
+    }
