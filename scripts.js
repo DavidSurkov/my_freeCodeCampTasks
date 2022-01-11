@@ -1401,4 +1401,22 @@ function digitize(str) {
 // rabotaet 
 function digitize(str) {
   return String(str).split('').map(element => Number(element)).reverse()
-    }
+  }
+
+//Sum of positive
+function positiveSum(arr) {
+  const posArr = arr.filter(num => num > -1);
+  const sumArr = posArr.reduce(function (prev, curr) {
+    return curr + prev;
+  }, 0);
+    return sumArr;
+  }
+  // the best
+  function positiveSum (arr) {
+    return arr.filter(x => x>=0).reduce((a, c) => a + c, 0);
+  }
+
+  //Given an array of integers, return a new array with each value doubled.
+  function maps(x){
+    return x.map(elem => elem * 2)
+   }
