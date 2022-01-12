@@ -1416,7 +1416,41 @@ function positiveSum(arr) {
     return arr.filter(x => x>=0).reduce((a, c) => a + c, 0);
   }
 
-  //Given an array of integers, return a new array with each value doubled.
-  function maps(x){
-    return x.map(elem => elem * 2)
-   }
+//Given an array of integers, return a new array with each value doubled.
+function maps(x){
+  return x.map(elem => elem * 2)
+}
+
+// Find the first non-consecutive number NE PONYAL
+function firstNonConsecutive (arr) {
+  for (let i = 1; i < arr.length; i++) {
+        if (arr[i - 1] + 1 !== arr[i]) return arr[i];
+    }
+    return null;
+}
+
+// My head is at the wrong end!
+function fixTheMeerkat(arr) {
+  return arr.reverse()
+}
+/*It's the academic year's end, fateful moment of your school report. The averages must be calculated. All the students come to you and entreat you to calculate their average for them. Easy ! You just need to write a script.
+
+Return the average of the given array rounded down to its nearest integer.
+
+The array will never be empty.*/
+function getAverage(marks){
+  return Math.floor(marks.reduce((a, b) => a + b, 0) / marks.length);
+}
+//else 
+function getAverage(marks){
+
+  // calculates total number of marks
+  var total = 0;
+  for(var i = 0; i < marks.length; i++){
+    total += marks[i];
+  }
+  
+  /* returns total number of marks divided by number of marks
+     rounded down to nearest integer */
+  return Math.floor(total / marks.length);
+}
